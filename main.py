@@ -94,7 +94,7 @@ port = 587  # For starttls
 sender_email = "arthur.the.ai.assistant@gmail.com"
 password = "aRtHuR_AI"
 
-recipient_emails = ['caragrasso@g.ucla.edu']
+recipient_emails = ['caragrasso@g.ucla.edu', "alitchfield@g.ucla.edu", "molly@mollyerwin.com"]
 for recipient in recipient_emails:
     message = MIMEMultipart("alternative")
     message["Subject"] = "Daily Chores (from Arthur)"
