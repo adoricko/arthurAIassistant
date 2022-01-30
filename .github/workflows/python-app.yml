@@ -1,0 +1,55 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: arthurChoreBot
+
+on:
+  schedule: 
+  - cron: "0 13 * * *"
+  workflow_dispatch:
+
+jobs:
+  send:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      run: |
+        python main.py
+    - name: Change config email
+      run: git config --global user.email "adoricko_53@berkeley.edu"
+    - name: Change config name
+      run: git config --global user.name "adoricko"
+    - name: Change remote
+      run: git remote set-url origin https://github.com/adoricko/arthurAIassistant
+    - name: Check for changes
+      run: git status
+    - name: address branch merging
+      run: git config pull.rebase false
+    - name: pull changes
+      run: git pull origin main
+    - name: Add changed files
+      run: git add .
+    - name: Commit changes
+      run: git commit -m "Sent email"
+    - name: fetch from master
+      run: git fetch origin main
+    - name: Push to master
+      run: git push origin main
