@@ -73,7 +73,7 @@ chore_schedule.to_csv("chore_schedule.csv")
 def html_list(chores):
     html = ""
     for c in chores.keys():
-        html += f"<ul>{c}: {chores[c]}.</ul>"
+        html += f"<li>{c}: {chores[c]}.</li>"
     return html
 
 def get_adjective():
@@ -94,7 +94,7 @@ port = 587  # For starttls
 sender_email = "arthur.the.ai.assistant@gmail.com"
 password = "aRtHuR_AI"
 
-recipient_emails = ['augustus.lewis.doricko@gmail.com']
+recipient_emails = ['caragrasso@g.ucla.edu']
 for recipient in recipient_emails:
     message = MIMEMultipart("alternative")
     message["Subject"] = "Daily Chores (from Arthur)"
