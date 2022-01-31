@@ -95,6 +95,7 @@ sender_email = "arthur.the.ai.assistant@gmail.com"
 password = "aRtHuR_AI"
 
 recipient_emails = ['caragrasso@g.ucla.edu', "alitchfield@g.ucla.edu", "molly@mollyerwin.com"]
+#recipient_emails = ["adoricko_53@berkeley.edu"]
 for recipient in recipient_emails:
     message = MIMEMultipart("alternative")
     message["Subject"] = "Daily Chores (from Arthur)"
