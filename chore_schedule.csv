@@ -1,5 +1,5 @@
 ,Trash,Counters,Stove,Sweep/Swiffer,Dish Rack,Mop Kitchen,Wipe Living/Dining Room Surfaces,Bathroom Counters/Sink,Toilet,Dish Towels & Bathroom Mats
 Frequency,1,0,0,999,0,999,999,2,30,6
-Countdown,1,0,0,996,0,993,993,2,18,1
+Countdown,0,0,0,995,0,999,999,1,17,0
 Calendar,999,999,999,2,999,6,6,999,999,999
-Turn,Ava,Cara,Ava,Cara,Molly,Ava,Molly,Molly,Molly,Cara
+Turn,Ava,Molly,Cara,Cara,Ava,Cara,Ava,Molly,Molly,Cara
